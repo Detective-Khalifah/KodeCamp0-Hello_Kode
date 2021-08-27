@@ -7,15 +7,26 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
+    <ImageView
+        android:id="@+id/birthdayCard"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/sayGreeting"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@id/sayGreeting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
+
+    <Button
+        android:id="@+id/sayGreeting"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/greeting"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
-        android:id="@+id/sayGreeting"
+        android:id="@+id/greeting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello Kode!"
@@ -25,12 +36,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/sayBGreeting"
+        android:id="@+id/bGreeting"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/sayGreeting"
+        android:textAlignment="center"
+        android:visibility="invisible"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/greeting" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
